@@ -132,7 +132,6 @@ function showText(text) {
             }
         }
     }
-    messages['gameover'] += "<div class='fltrt' id='tweetStuff'><a class='tweet' href='https://twitter.com/intent/tweet?text=Can you beat my &button_hashtag=hextris score of "+ score +" points on http://hextris.github.io/hextris?' data-lang='en' data-related='hextris:hextris'>Share Your Score on Twitter!!!</a></div>"
     $("#overlay").html(messages[text]);
     $("#overlay").fadeIn("1000", "swing");
 
@@ -141,6 +140,7 @@ function showText(text) {
         if (settings.platform == 'mobile') {
             $('.tg').css('margin-top', '4px');
         }
+        dp_submitScore(score);
     }
 }
 
