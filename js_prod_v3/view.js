@@ -95,7 +95,7 @@ function showText(text) {
         'paused': "<div class='centeredHeader unselectable'>Paused</div><br><div class='unselectable centeredSubHeader'>Press p to resume</div><div style='height:100px;line-height:100px;cursor:pointer;'></div>",
         'pausedMobile': "<div class='centeredHeader unselectable'>Paused</div><br><div class='unselectable centeredSubHeader'>Press <i class='fa fa-play'></i> to resume</div><div style='height:100px;line-height:100px;cursor:pointer;'></div>",
         'start': "<div class='centeredHeader unselectable' style='line-height:80px;'>Press enter to start</div>",
-        'gameover': "<div class='centeredHeader unselectable'> Game Over: " + score + " pts</div><br><div style='font-size:24px;' class='centeredHeader unselectable'> High Scores:</div><table class='tg' style='margin:0px auto'> "
+        'gameover': "<div class='centeredHeader unselectable'> Game Over: " + score + " pts</div><br><div style='font-size:24px;' class='centeredHeader unselectable'> Top 10:</div><table class='tg' style='margin:0px auto'> "
          
     };
 
@@ -108,7 +108,22 @@ function showText(text) {
     if (text == 'gameover') {
         var allZ = 1;
         var i;
-
+        var top;
+        $.ajax({ 
+            type : "get", 
+            url : "rank", 
+            data : "appname=hextris", 
+            async : false, 
+            success : function(data){ 
+                data = eval("(" + data + ")"); 
+                top = data.top; 
+                for (i = 0; i < 10; i++) {
+                    if (top.length > i) {
+                        console.log(top[i][1]);
+                    }
+                }
+            } 
+        }); 
         for (i = 0; i < 3; i++) {
             if (highscores.length > i) {
                 messages['gameover'] += "<tr> <th class='tg-031e'>" + (i + 1) + ".</th> <th class='tg-031e'>" + highscores[i] + " pts</th> </tr>";
@@ -173,7 +188,7 @@ function gameOverDisplay() {
     $("#attributions").show();
     var c = document.getElementById("canvas");
     c.className = "blur";
-    showText('gameover');
+    showText('gameover');H
     showbottombar();
 }
 
