@@ -142,6 +142,7 @@ function showText(text) {
         }
         var tempid = Date.now();
         $.post("http://effyroth.com/rank?appname=hextris&uid=" + tempid + "&score=" + score, function(data){
+            data = JSON.parse(data)
             console.log(data);
             console.log(data.user);
             console.log(data.user.rank);
