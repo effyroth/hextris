@@ -141,7 +141,7 @@ function showText(text) {
             $('.tg').css('margin-top', '4px');
         }
         var tempid = Date.now();
-        $.post("http://rank.effyroth.com/rank?appname=hextris&uid=" + tempid + "&score=" + score, function(data){
+        $.post("http://effyroth.com/rank?appname=hextris&uid=" + tempid + "&score=" + score, function(data){
             dp_submitScore(score, data.user.rank);
         });
         
