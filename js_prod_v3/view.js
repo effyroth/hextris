@@ -111,7 +111,7 @@ function showText(text) {
         var top;
         $.ajax({ 
             type : "get", 
-            url : "rank", 
+            url : "http://effyroth.com/rank", 
             data : "appname=hextris", 
             async : false, 
             success : function(data){ 
@@ -188,7 +188,7 @@ function gameOverDisplay() {
     $("#attributions").show();
     var c = document.getElementById("canvas");
     c.className = "blur";
-    showText('gameover');H
+    showText('gameover');
     showbottombar();
 }
 
