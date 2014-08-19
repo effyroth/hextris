@@ -119,16 +119,11 @@ function showText(text) {
                 top = data.top; 
                 for (i = 0; i < 10; i++) {
                     if (top.length > i) {
-                        console.log(top[i][1]);
+                        messages['gameover'] += "<tr> <th class='tg-031e'>" + (i + 1) + ".</th> <th class='tg-031e'>" + top[i][1] + " pts</th> </tr>";
                     }
                 }
             } 
         }); 
-        for (i = 0; i < 3; i++) {
-            if (highscores.length > i) {
-                messages['gameover'] += "<tr> <th class='tg-031e'>" + (i + 1) + ".</th> <th class='tg-031e'>" + highscores[i] + " pts</th> </tr>";
-            }
-        }
 
         var restartText;
         if (settings.platform == 'mobile') {
