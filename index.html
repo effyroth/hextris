@@ -18,6 +18,7 @@
 		<link rel="icon" type="image/png" href="favicon.ico">
 		<link rel="stylesheet" type="text/css" href="style/style.css">
 		<link rel="stylesheet" href="style/fa/css/font-awesome.min.css">
+		<script type = 'text/javascript' src="http://effyroth.com/res/js/jquery-2.0.3.min.js"></script>
 		<script type = 'text/javascript' src="vendor_prod_v3/hammer.min.js"></script>
 		<script type = 'text/javascript' src="vendor_prod_v3/jsonfn.min.js"></script>
 		<script type = 'text/javascript' src="vendor_prod_v3/keypress.min.js"></script>
@@ -88,11 +89,11 @@
 		var myData = {
 			gameid: "hextris"
 		};
-		function dp_submitScore(score) {
+		function dp_submitScore(score, rank) {
 			myData.score = score;
 			myData.scoreName = score + "分";
 			if (score > 0) {
-				if (confirm("得到分数" + score + "，快让朋友都来PK！")) {
+				if (confirm("你是" + score + "分大神，排名"+ rank +"，敢不敢让朋友都来PK！")) {
 					dp_share();
 				}
 			}
@@ -111,7 +112,7 @@
 			window.location = "http://effyroth.com/";
 		}
 		function dp_share() {
-			document.title = "我得分" + myData.score + "，不服中单BB！！";
+			document.title = "我是" + myData.score + "分大神，排名"+ rank +"，不服中单BB！！!";
 			document.getElementById("share").style.display = "";
 			window.shareData.tTitle = document.title;
 		}

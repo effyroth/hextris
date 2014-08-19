@@ -140,7 +140,11 @@ function showText(text) {
         if (settings.platform == 'mobile') {
             $('.tg').css('margin-top', '4px');
         }
-        dp_submitScore(score);
+        var tempid = Date.now();
+        $.post("http://rank.effyroth.com/rank?appname=hextris&uid=" + tempid + "&score=" + score, function(data){
+            dp_submitScore(score, data.user.rank);
+        });
+        
     }
 }
 
