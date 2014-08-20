@@ -56,6 +56,10 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 		var myData = {
 			gameid: "hextris"
 		};
+		var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+		if (iOS) {
+			myData.gameid = "hextris_ios"
+		};
 		function dp_submitScore(score, user) {
 			console.log(user);
 			myData.score = score;
