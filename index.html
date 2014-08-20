@@ -62,7 +62,7 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 			myData.scoreName = score + "分";
 			if (score > 0) {
 				dp_share();
-				if (confirm("你是" + score + "分大神，排名"+ rank +"，敢不敢让朋友都来PK！")) {
+				if (confirm("你是" + score + "分大神，排名第"+ rank +"，敢不敢@三个好基♂友来挑战！")) {
 					document.getElementById("share").style.display = "";
 				}
 
@@ -72,7 +72,7 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 		window.shareData = {
 			"imgUrl": "http://appimg.bjcnc.img.sohucs.com/95AEB4916F8E488A8B5F154C5FAB152D",
 			"timeLineLink": "http://effyroth.com/hextris/index.html",
-			"tTitle": "hextris，你不会还没玩过吧？！",
+			"tTitle": "hextris，开发者是牲口么！完全停不下来！！！",
 			"tContent": "我还没出最后得分，不服中单BB！！"
 		};
 		function goHome() {
@@ -82,7 +82,7 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 			window.location = "http://effyroth.com/";
 		}
 		function dp_share() {
-			document.title = "我是" + myData.score + "分大神，排名"+ myData.rank +"，不服中单BB！！！";
+			document.title = "我是" + myData.score + "分大神，排名第"+ myData.rank +"，不服中单BB！！！";
 			
 			window.shareData.tTitle = document.title;
 		}
