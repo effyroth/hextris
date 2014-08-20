@@ -57,6 +57,7 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 			gameid: "hextris"
 		};
 		function dp_submitScore(score, user) {
+			console.log(user)
 			myData.score = score;
 			myData.rank = user.rank;
 			myData.percent = user.percent;
