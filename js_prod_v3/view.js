@@ -112,7 +112,7 @@ function showText(text) {
         $.ajax({ 
             type : "get", 
             url : "http://effyroth.com/rank", 
-            data : "appname=hextris", 
+            data : "appname=" + myData.gameid, 
             async : false, 
             success : function(data){ 
                 data = eval("(" + data + ")"); 
@@ -151,7 +151,7 @@ function showText(text) {
             $('.tg').css('margin-top', '4px');
         }
         var tempid = Date.now();
-        $.post("http://effyroth.com/rank?appname=hextris&uid=" + tempid + "&score=" + score, function(data){
+        $.post("http://effyroth.com/rank?appname=" + myData.gameid + "&uid=" + tempid + "&score=" + score, function(data){
             data = JSON.parse(data)
             dp_submitScore(score, data.user);
         });
