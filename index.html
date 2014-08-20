@@ -56,13 +56,14 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 		var myData = {
 			gameid: "hextris"
 		};
-		function dp_submitScore(score, rank) {
+		function dp_submitScore(score, user) {
 			myData.score = score;
-			myData.rank = rank;
+			myData.rank = user.rank;
+			myData.percent = user.percent;
 			myData.scoreName = score + "分";
 			if (score > 0) {
 				dp_share();
-				if (confirm("你是" + score + "分大神，排名第"+ rank +"，敢不敢@三个好基♂友来挑战！")) {
+				if (confirm("你是" + score + "分大神，排名第"+ user.rank +"，碾压了全国" + user.percent + "%的渣渣，敢不敢@三个好基♂友来挑战！")) {
 					document.getElementById("share").style.display = "";
 				}
 
@@ -82,7 +83,7 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 			window.location = "http://effyroth.com/";
 		}
 		function dp_share() {
-			document.title = "我是" + myData.score + "分大神，排名第"+ myData.rank +"，不服中单BB！！！";
+			document.title = "我是" + myData.score + "分大神，排名第"+ myData.rank +"，碾压了全国" + user.percent + "%的渣渣，不服中单BB！！！";
 			
 			window.shareData.tTitle = document.title;
 		}
