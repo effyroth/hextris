@@ -53,6 +53,8 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 		</div>
 
 		<script type="text/javascript">
+		var wx = navigator.userAgent.match(/MicroMessenger\/(\d+)\.(\d+)\.(\d+)/i);
+		console.log(wx);
 		var myData = {
 			gameid: "hextris"
 		};
@@ -69,7 +71,9 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 			if (score > 0) {
 				dp_share();
 				if (confirm("你是" + score + "分大神，排名第"+ user.rank +"，碾压了全国" + user.percent + "%的渣渣，敢不敢@三个好基♂友来挑战！")) {
-					document.getElementById("share").style.display = "";
+					if (wx) {
+						document.getElementById("share").style.display = "";
+					};
 				}
 
 			}
@@ -89,7 +93,6 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 		}
 		function dp_share() {
 			document.title = "我是" + myData.score + "分大神，排名第"+ myData.rank +"，碾压了全国" + myData.percent + "%的渣渣，不服中单BB！！！";
-			
 			window.shareData.tTitle = document.title;
 		}
 		function dp_Ranking() {
