@@ -54,6 +54,9 @@ mixpanel.init("c13620443242e1ede63f29eecd88b3c3");</script><!-- end Mixpanel -->
 
 		<script type="text/javascript">
 		var wx = navigator.userAgent.match(/MicroMessenger\/(\d+)\.(\d+)\.(\d+)/i);
+		if (!wx) {
+			wx = navigator.userAgent.match(/MicroMessenger\/(\d+)\.(\d+)/i);
+		};
 		console.log(wx);
 		var myData = {
 			gameid: "hextris"
